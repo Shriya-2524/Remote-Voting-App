@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+header {
+  position: relative;
+}
+.navbar-items {
+  position: absolute;
+  right: 20px;
+}
+
+li {
+  display: block;
+  list-style-type: none;
+}

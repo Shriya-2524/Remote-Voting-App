@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vote Now</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h2>🗳️ Cast Your Vote</h2>
+
+    <form method="POST" action="/submit_vote">
+      <div class="vote-container">
+        {% for c in candidates %}
+        <div class="candidate-card">
+          <label>
+            <input
+              type="radio"
+              name="candidate_id"
+              value="{{ c[0] }}"
+              required
+            />
+            <div class="candidate-info">
+              <img
+                src="{{ url_for('static', filename=c[3]) }}"
+                class="candidate-photo"
+              /><br />
+              <strong>{{ c[1] }}</strong><br />
+              <small>{{ c[2] }}</small><br />
+              <img
+                src="{{ url_for('static', filename=c[4]) }}"
+                class="party-logo"
+              />
+            </div>
+          </label>
+        </div>
+        {% endfor %}
+      </div>
+      <br />
+      <button type="submit">✅ Submit Vote</button>
+    </form>
+  </body>
+</html>

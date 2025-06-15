@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voter Portal - Main Page</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        background-color: #eee;
+      }
+
+      .main-page {
+        height: 100vh;
+        background-image: url("/static/Main screen.jpg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .Why-vote {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #000;
+        border-radius: 10px;
+        margin-top: 30px;
+        background-color: #ececec;
+      }
+
+      .Why-vote img {
+        max-height: 300px;
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+      }
+
+      .why-vote-text {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+      }
+
+      .button-register {
+        background-color: #ffc107;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .button-register:hover {
+        background-color: #e68a00;
+      }
+
+      .why-vote-h1 {
+        text-align: center;
+        font-size: 30px;
+      }
+
+      .why-vote-p {
+        font-size: 22px;
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow p-4 flex items-center justify-between">
+      <div class="text-2xl font-bold text-gray-800">Voter Portal</div>
+
+      <div class="flex items-center space-x-6 text-gray-700 font-medium">
+        <a href="{{ url_for('login') }}" class="hover:text-blue-600">Login</a>
+        <a
+          href="{{ url_for('register') }}"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition"
+          >Register</a
+        >
+      </div>
+    </nav>
+
+    <!-- Background -->
+    <div class="main-page"></div>
+
+    <!-- Section 1 -->
+    <section>
+      <div class="Why-vote">
+        <div class="why-vote-text">
+          <h1 class="why-vote-h1">Why Vote Online?</h1>
+          <p class="why-vote-p">
+            Most people miss the opportunity to vote because of having to travel
+            larger distances. Our website focuses on making voting process
+            hassle-free and making voting possible RIGHT FROM YOUR HOME.
+          </p>
+        </div>
+        <div class="why-vote-image">
+          <img src="/static/why-vote-image.jpg" alt="why-vote-image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 - Register -->
+    <section>
+      <div class="Why-vote">
+        <div class="why-vote-image">
+          <img src="/static/vote.jpg" alt="vote-image" />
+        </div>
+        <div
+          class="why-vote-text flex flex-col justify-center items-center text-center space-y-6"
+        >
+          <h1 class="why-vote-h1">Register Here</h1>
+          <p class="why-vote-p">
+            Are you new to voting?<br />
+            Register here and fill in your details to become a new voter and
+            contribute to democracy!
+          </p>
+          <a href="{{ url_for('register') }}" class="button-register"
+            >Register!</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section>
+      <div class="Why-vote">
+        <div class="why-vote-text">
+          <h1 class="why-vote-h1">Secure and Easy Voting</h1>
+          <p class="why-vote-p">
+            With our online voting platform, you can cast your vote securely
+            from anywhere in the country with just a few clicks!
+          </p>
+
+          <a href="{{ url_for('vote_page') }}" class="btn btn-primary"
+            >🗳️ Vote Now</a
+          >
+        </div>
+        <div class="why-vote-image">
+          <img src="/static/why-vote-image.jpg" alt="why-vote-image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 h-96 flex items-center justify-center">
+      <div class="text-center">
+        <p>&copy; 2025 Voter Portal</p>
+        <p>Designed and Developed by Sushruth & Shriya</p>
+      </div>
+    </footer>
+
+    <!-- Dropdown JavaScript -->
+    <script>
+      const dropdownButton = document.getElementById("dropdownButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      if (dropdownButton) {
+        dropdownButton.addEventListener("click", () => {
+          dropdownMenu.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !dropdownButton.contains(e.target) &&
+            !dropdownMenu.contains(e.target)
+          ) {
+            dropdownMenu.classList.add("hidden");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

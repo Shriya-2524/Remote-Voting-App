@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voter portal</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="bg-white shadow p-4 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-gray-800">
+        <span>MyLogo</span>
+      </div>
+
+      <!-- Navigation -->
+      <div
+        class="flex items-center space-x-6 text-gray-700 font-medium relative"
+      >
+        <!-- Dropdown Section -->
+        <div class="relative">
+          <button
+            id="dropdownButton"
+            class="hover:text-blue-600 inline-flex items-center gap-1 focus:outline-none"
+          >
+            Our Services <i class="fa-solid fa-chevron-down text-sm"></i>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div
+            id="dropdownMenu"
+            class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-10"
+          >
+            <a href="#new" class="block px-4 py-2 hover:bg-gray-100"
+              >New Registration</a
+            >
+            <a href="#nri" class="block px-4 py-2 hover:bg-gray-100"
+              >NRI Registration</a
+            >
+            <a href="#vote" class="block px-4 py-2 hover:bg-gray-100"
+              >Vote Online</a
+            >
+          </div>
+        </div>
+
+        <!-- Other Links -->
+        <a href="login.html" class="hover:text-blue-600">Login</a>
+        <a
+          href="sign-up.html"
+          class="hover:bg-blue-700 text-white bg-blue-600 px-4 py-2 rounded-lg transition"
+        >
+          Signup
+        </a>
+      </div>
+    </nav>
+
+    <div class="main-page"></div>
+
+    <!-- JS to handle dropdown -->
+    <script>
+      const dropdownButton = document.getElementById("dropdownButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      dropdownButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          !dropdownButton.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aligned Dropdown</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* Full-screen background */
+      .main-page {
+        height: 100vh; /* Full screen */
+        background-image: url("Main\ screen.jpg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .Why-vote {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #000;
+        margin-top: 30px;
+      }
+      .Why-vote img {
+        max-height: 300px;
+      }
+      .why-vote-text {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+        position: relative;
+      }
+
+      .button-register {
+        position: absolute;
+        background-color: #ffc107;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .button-register:hover {
+        background-color: #e68a00;
+      } 
+      .why-vote-h1 {
+        text-align: center; 
+        font-size: 30px;
+      }
+
+      .why-vote-p {
+        font-size: 22px;
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+      }
+    </style>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="bg-white shadow p-4 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-gray-800">
+        <span>MyLogo</span>
+      </div>
+
+      <!-- Navigation -->
+      <div
+        class="flex items-center space-x-6 text-gray-700 font-medium relative"
+      >
+        <!-- Dropdown Section -->
+        <div class="relative">
+          <button
+            id="dropdownButton"
+            class="hover:text-blue-600 inline-flex items-center gap-1 focus:outline-none"
+          >
+            Our Services <i class="fa-solid fa-chevron-down text-sm"></i>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div
+            id="dropdownMenu"
+            class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-10"
+          >
+            <a href="sign-up.html" class="block px-4 py-2 hover:bg-gray-100"
+              >New Registration</a
+            >
+            <a href="#nri" class="block px-4 py-2 hover:bg-gray-100"
+              >NRI Registration</a
+            >
+            <a href="#vote" class="block px-4 py-2 hover:bg-gray-100"
+              >Vote Online</a
+            >
+          </div>
+        </div>
+
+        <!-- Other Links -->
+        <a href="login.html" class="hover:text-blue-600">Login</a>
+        <a
+          href="sign-up.html"
+          class="hover:bg-blue-700 text-white bg-blue-600 px-4 py-2 rounded-lg transition"
+        >
+          Signup
+        </a>
+      </div>
+    </nav>
+    <div class="main-page"></div>
+    <section>
+      <div class="Why-vote">
+        <div class="why-vote-text">
+          <h1 class="why-vote-h1">Why Vote Online?</h1>
+          <p class="why-vote-p">
+            Most people miss opportunity to vote because of having to travel larger distances.
+            Our website focuses on making voting process hassle-free and make voting option RIGHT FROM THEIR HOMES.
+          </p>
+        </div>
+        <div class="why-vote-image">
+          <img src="why-vote-image.jpg" alt="why-vote-image" />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="Why-vote">
+        <div class="why-vote-image">
+          <img src="why-vote-image.jpg" alt="why-vote-image" />
+        </div>
+        <div class="why-vote-text">
+          <h1 class="why-vote-h1">Register Here</h1>
+          <p class="why-vote-p">
+            Are you new to voting?<br>
+            register here and fill in your details to become a new voter, and contribute to the democracy!!
+          </p>
+            <button class="button-register"> <a href="sign-up.html"> Register! </a></button>
+        </di>
+      </div>
+    </section>
+    <section>
+      <div class="Why-vote">
+        <div class="why-vote-text">
+          <h1>Why Vote Online?</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            quae, quod, accusantium, quia, quibusdam quos, quidem quex
+          </p>
+        </div>
+        <div class="why-vote-image">
+    </section>
+
+  
+
+      <footer class="bg-gray-200 h-96 flex items-center justify-center">
+        <div class="text-center">
+          <p>&copy; 2023 Voter Portal</p>
+          <p>Designed and Developed by Sushruth, Shriya</p>
+        </div>
+      </footer>
+  
+
+    <!-- JS to handle dropdown -->
+    <script>
+      const dropdownButton = document.getElementById("dropdownButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      dropdownButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          !dropdownButton.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
+
